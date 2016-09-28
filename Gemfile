@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 #FUEL SDK for Marketing Cloud
 gem 'fuelsdk', '0.0.5', :path => 'vendor/gems/'
 
+#HTTParty for making back-end http requests
+gem 'httparty'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
