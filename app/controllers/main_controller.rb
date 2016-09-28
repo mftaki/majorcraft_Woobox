@@ -10,7 +10,7 @@ class MainController < ApplicationController
     # values_arr = params['entries'].gsub("\{", "")
     # values_arr = params['entries'].split(":")
     # p values_arr
-    if(params['entries'] != null)
+    if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
       p entries
     end
