@@ -3,6 +3,6 @@ class MainController < ApplicationController
   end
 
   def listen
-    p request
+    response.headers['realtimeapi_code'] = params['realtimeapi_code']
   end
 end
