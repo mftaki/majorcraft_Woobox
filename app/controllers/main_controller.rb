@@ -6,9 +6,13 @@ class MainController < ApplicationController
 
   def listen
     response.headers['realtimeapi_code'] = params['realtimeapi_code']
-    values_arr = params['entries'].gsub("\\", "")
-    values_arr = params['entries'].gsub("\{", "")
-    values_arr = params['entries'].split(":")
-    p values_arr
+    # values_arr = params['entries'].gsub("\\", "")
+    # values_arr = params['entries'].gsub("\{", "")
+    # values_arr = params['entries'].split(":")
+    # p values_arr
+    if(params['entries'] != null)
+      entries = JSON.parse(params['entries'])
+      p entries
+    end
   end
 end
