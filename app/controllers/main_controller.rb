@@ -67,7 +67,7 @@ class MainController < ApplicationController
       dataextensionrow.props = {"EmailAddress" => entries[0]['email'], "Signup_Time" => entries[0]['createdate']}
       results = dataextensionrow.post
 
-      p results
+      p results.results
     end
   end
 
