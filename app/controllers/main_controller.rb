@@ -34,7 +34,7 @@ class MainController < ApplicationController
           "Authorization" => access_token,
           "Content-Type" => "application/json"
         },
-        body: {
+        body: {[{
           "keys": {
             "EmailAddress": entries[0]['email']
           },
@@ -44,7 +44,7 @@ class MainController < ApplicationController
             "FName": entries[0]['first_name'],
             "LName": entries[0]['last_name']
           }
-        }.to_json
+        }]}.to_json
         })
     end
   end
