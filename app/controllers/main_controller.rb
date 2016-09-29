@@ -59,7 +59,7 @@ class MainController < ApplicationController
       # p results
 
       myclient = ET_Client.new auth
-      p myClient
+      p myclient
 
       dataextensionrow.authStub = myclient
       dataextensionrow.Name = 'WOOBOX_API'
