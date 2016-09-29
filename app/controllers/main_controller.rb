@@ -61,6 +61,7 @@ class MainController < ApplicationController
       myclient = ET_Client.new auth
       p myclient
 
+      dataextensionrow = FuelSDK::DataExtension::Row.new
       dataextensionrow.authStub = myclient
       dataextensionrow.Name = 'WOOBOX_API'
       dataextensionrow.props = {"EmailAddress" => entries[0]['email'], "Signup_Time" => entries[0]['createdate']}
