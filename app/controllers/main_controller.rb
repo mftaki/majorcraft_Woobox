@@ -19,11 +19,11 @@ class MainController < ApplicationController
       c4 = false
       c5 = false
 
-      if(params['custom_4'] == "Yes")
+      if(entries[0]['custom_4'] == "Yes")
         c4 = true
       end
 
-      if(params['custom_5'] == "Yes")
+      if(entries[0]['custom_5'] == "Yes")
         c5 = true
       end
 
