@@ -16,6 +16,16 @@ class MainController < ApplicationController
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
       p entries
+      c4 = false
+      c5 = false
+
+      if(params['custom_4'] == "Yes")
+        c4 = true
+      end
+
+      if(params['custom_5'] == "Yes")
+        c5 = true
+      end
 
       myclient = ET_Client.new auth
       p myclient
@@ -28,8 +38,8 @@ class MainController < ApplicationController
                                 "Age" => entries[0]['age'],
                                 "City" => entries[0]['city'],
                                 "Class" => entries[0]['class'],
-                                "Custom4" => entries[0]['custom_4'],
-                                "Custom5" => entries[0]['custom_5'],
+                                "Custom4" => c4,
+                                "Custom5" => c5,
                                 "FName" => entries[0]['first_name'],
                                 "LName" => entries[0]['last_name'],
                                 "Occupation" => entries[0]['occupation'],
