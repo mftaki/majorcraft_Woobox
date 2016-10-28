@@ -49,6 +49,17 @@ class MainController < ApplicationController
       results = dataextensionrow.post
 
       p results.results
+
+
+      subURL = "https://www.exacttargetapis.com/messaging/v1/messageDefinitionSends/key:2156/send"
+
+      HTTParty.post(subURL, body: {
+        "To": {
+            "Address": entries[0]['email']
+        }
+      })
+
+
     end
   end
 
@@ -59,5 +70,5 @@ class MainController < ApplicationController
           'secret' => "dojfvyOTi28i48kyhWOCotv1"
         }
       }
-    end
+  end
 end
