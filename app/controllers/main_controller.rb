@@ -56,7 +56,7 @@ class MainController < ApplicationController
           p '>>> Send an email with TriggeredSend'
           sendTrig = FuelSDK::TriggeredSend.new
           sendTrig.authStub = myclient
-          sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"EmailAddress"=> email}}]
+          sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"SubscriberKey"=> email, "EmailAddress"=> email}}]
           sendResponse = sendTrig.send
           p 'Send Status: ' + sendResponse.status.to_s
           p 'Code: ' + sendResponse.code.to_s
