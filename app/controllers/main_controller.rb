@@ -42,24 +42,12 @@ class MainController < ApplicationController
                                 "Custom5" => c5,
                                 "FName" => entries[0]['first_name'],
                                 "LName" => entries[0]['last_name'],
-                                "Phone" => entries[0]['phone'],
                                 "Occupation" => entries[0]['occupation'],
                                 "OtherProfession" => entries[0]['other_profession'],
                                 "IP_Address" => entries[0]['ipaddress']}
       results = dataextensionrow.post
 
       p results.results
-
-
-      subURL = "https://www.exacttargetapis.com/messaging/v1/messageDefinitionSends/key:2156/send"
-
-      HTTParty.post(subURL, body: {
-        "To": {
-            "Address": entries[0]['email']
-        }
-      })
-
-
     end
   end
 
