@@ -63,7 +63,7 @@ class MainController < ApplicationController
           p 'Message: ' + sendResponse.message.to_s
           p 'Result Count: ' + sendResponse.results.length.to_s
           p 'Results: ' + sendResponse.results.inspect
-        raise 'Failure sending triggersend' unless sendResponse.success?
+        raise 'Failure sending triggersend' unless sendResponse.success?      
 
     end
   end
