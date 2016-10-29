@@ -53,11 +53,24 @@ class MainController < ApplicationController
 
       subURL = "https://www.exacttargetapis.com/messaging/v1/messageDefinitionSends/key:2156/send"
 
-      HTTParty.post(subURL, body: {
-        "To": {
-            "Address": entries[0]['email']
-        }
+      HTTParty.post(subURL, 
+      { 
+        headers: {
+          "Authorization" => token,
+          "Content-Type" => "application/json"
+        }, 
+        body: {
+          "To": {
+              "Address": entries[0]['email']
+          }
+        }.to_json
       })
+
+    automation_response = HTTParty.post("https://webservice.exacttarget.com/Service.asmx",
+      :body => xml,
+      :headers => {"Content-Type" => "text/xml", "SOAPAction" => "Create"}
+    )
+
 
 
     end
