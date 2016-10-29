@@ -42,29 +42,12 @@ class MainController < ApplicationController
                                 "Custom5" => c5,
                                 "FName" => entries[0]['first_name'],
                                 "LName" => entries[0]['last_name'],
-                                "Phone" => entries[0]['phone'],
                                 "Occupation" => entries[0]['occupation'],
                                 "OtherProfession" => entries[0]['other_profession'],
                                 "IP_Address" => entries[0]['ipaddress']}
       results = dataextensionrow.post
 
-      p results.results
-
-      email = entries[0]['email']
-
-      # Send an email with TriggeredSend
-          p '>>> Send an email with TriggeredSend'
-          sendTrig = FuelSDK::TriggeredSend.new
-          sendTrig.authStub = myclient
-          sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"SubscriberKey"=> email, "EmailAddress"=> email}}]
-          sendResponse = sendTrig.send
-          p 'Send Status: ' + sendResponse.status.to_s
-          p 'Code: ' + sendResponse.code.to_s
-          p 'Message: ' + sendResponse.message.to_s
-          p 'Result Count: ' + sendResponse.results.length.to_s
-          p 'Results: ' + sendResponse.results.inspect
-        raise 'Failure sending triggersend' unless sendResponse.success?      
-
+      p results.results     
     end
   end
 
