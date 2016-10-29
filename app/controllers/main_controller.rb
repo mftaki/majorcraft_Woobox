@@ -50,28 +50,20 @@ class MainController < ApplicationController
 
       p results.results
 
+      email = entries[0]['email']
 
-      subURL = "https://www.exacttargetapis.com/messaging/v1/messageDefinitionSends/key:2156/send"
-
-      HTTParty.post(subURL, 
-      { 
-        headers: {
-          "Authorization" => token,
-          "Content-Type" => "application/json"
-        }, 
-        body: {
-          "To": {
-              "Address": entries[0]['email']
-          }
-        }.to_json
-      })
-
-    automation_response = HTTParty.post("https://webservice.exacttarget.com/Service.asmx",
-      :body => xml,
-      :headers => {"Content-Type" => "text/xml", "SOAPAction" => "Create"}
-    )
-
-
+      # Send an email with TriggeredSend
+          p '>>> Send an email with TriggeredSend'
+          sendTrig = MarketingCloudSDK::TriggeredSend.new
+          sendTrig.authStub = stubObj
+          sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"EmailAddress"=> email}}]
+          sendResponse = sendTrig.send
+          p 'Send Status: ' + sendResponse.status.to_s
+          p 'Code: ' + sendResponse.code.to_s
+          p 'Message: ' + sendResponse.message.to_s
+          p 'Result Count: ' + sendResponse.results.length.to_s
+          p 'Results: ' + sendResponse.results.inspect
+        raise 'Failure sending triggersend' unless sendResponse.success?
 
     end
   end
