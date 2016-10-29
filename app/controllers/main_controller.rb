@@ -55,7 +55,7 @@ class MainController < ApplicationController
       # Send an email with TriggeredSend
           p '>>> Send an email with TriggeredSend'
           sendTrig = MarketingCloudSDK::TriggeredSend.new
-          sendTrig.authStub = stubObj
+          sendTrig.authStub = myclient
           sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"EmailAddress"=> email}}]
           sendResponse = sendTrig.send
           p 'Send Status: ' + sendResponse.status.to_s
