@@ -68,6 +68,9 @@ class MainController < ApplicationController
           p 'Result Count: ' + sendResponse.results.length.to_s
           p 'Results: ' + sendResponse.results.inspect
 
+          p sendResponse
+
+
 
     end
   end
