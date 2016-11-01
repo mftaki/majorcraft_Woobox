@@ -19,11 +19,11 @@ class MainController < ApplicationController
       c4 = false
       c5 = false
 
-      if(entries[0]['custom_4'] == "Yes")
+      if(entries[0]['own_yamaha_bike'] == "Yes")
         c4 = true
       end
 
-      if(entries[0]['custom_5'] == "Yes")
+      if(entries[0]['subscribe_newsletter'] == "Yes")
         c5 = true
       end
 
@@ -67,7 +67,6 @@ class MainController < ApplicationController
           p 'Message: ' + sendResponse.message.to_s
           p 'Result Count: ' + sendResponse.results.length.to_s
           p 'Results: ' + sendResponse.results.inspect
-
 
 
     end
