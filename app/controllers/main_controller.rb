@@ -8,6 +8,8 @@ class MainController < ApplicationController
 
   def listen
 
+    render :status => 200, :nothing => true
+
     response.headers['realtimeapi_code'] = params['realtimeapi_code']
     # values_arr = params['entries'].gsub("\\", "")
     # values_arr = params['entries'].gsub("\{", "")
@@ -73,7 +75,7 @@ class MainController < ApplicationController
       p 'Results: ' + sendResponse.results.inspect
 
     end
-    render status: 200
+    
   end
 
   def auth
