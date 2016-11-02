@@ -48,7 +48,26 @@ class MainController < ApplicationController
                                 "IP_Address" => entries[0]['ipaddress']}
       results = dataextensionrow.post
 
-      p results.results     
+      p results.results
+
+      # auth1 = {'client' => {'id' => "7b0dwqmgp5sebmnf5fbvedwr",'secret' => "dojfvyOTi28i48kyhWOCotv1"}}
+
+      myclient = ET_Client.new auth
+
+      email = entries[0]['email']
+
+      # Send an email with TriggeredSend
+          p '>>> Send an email with TriggeredSend'
+          sendTrig = FuelSDK::TriggeredSend.new
+          sendTrig.authStub = myclient
+          sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"SubscriberKey"=> email, "EmailAddress"=> email}}]
+          sendResponse = sendTrig.send
+          p 'Send Status: ' + sendResponse.status.to_s
+          p 'Code: ' + sendResponse.code.to_s
+          p 'Message: ' + sendResponse.message.to_s
+          p 'Result Count: ' + sendResponse.results.length.to_s
+          p 'Results: ' + sendResponse.results.inspect
+
     end
   end
 
