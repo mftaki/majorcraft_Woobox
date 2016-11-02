@@ -67,7 +67,6 @@ class MainController < ApplicationController
       p 'Results: ' + sendResponse.results.inspect
 
     end
-    render status: 200
   end
 
   def auth
