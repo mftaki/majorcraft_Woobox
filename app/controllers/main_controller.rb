@@ -19,6 +19,12 @@ class MainController < ApplicationController
       c4 = false
       c5 = false
 
+      entries.each do |entry|
+        p "*" * 50
+        p entry
+        p "*" * 50
+      end
+
       if(entries[0]['own_yamaha_bike'] == "Yes")
         c4 = true
       end
