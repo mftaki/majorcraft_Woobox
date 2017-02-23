@@ -36,7 +36,7 @@ class MainController < ApplicationController
           c5 = true
         end
 
-        
+
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
@@ -80,8 +80,8 @@ class MainController < ApplicationController
   def auth
       {
         'client' => {
-          'id' => "7b0dwqmgp5sebmnf5fbvedwr",
-          'secret' => "dojfvyOTi28i48kyhWOCotv1"
+          'id' => "iab0ypob0b6anprz46y10m4x",
+          'secret' => "Og2nhtE5N8s9dJil1lQoJHnu"
         }
       }
   end
