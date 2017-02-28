@@ -77,7 +77,7 @@ class MainController < ApplicationController
         dataextensionrow.props = {"SubscriberKey" => id,
                                   "EmailAddress" => entry['email'],
                                   "SignUpTime" => entry['createdate'],
-                                  "DOB" => entry['age'],
+                                  "DOB" => bod,
                                   "Country" => entry['country'],
                                   "State" => entry['state'],
                                   "Offshore-jigging" => oj,
