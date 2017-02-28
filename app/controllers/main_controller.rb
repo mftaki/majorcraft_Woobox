@@ -16,8 +16,13 @@ class MainController < ApplicationController
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
       p entries
-      c4 = false
-      c5 = false
+      oj = false
+      op = false
+      sj = false
+      il = false
+      tr = false
+      cr = false
+      bs = false
 
       myclient = ET_Client.new auth
       p myclient
@@ -26,33 +31,64 @@ class MainController < ApplicationController
         p entry['email']
 
 
-        if(entry['own_yamaha_bike'] == "Yes")
-          p "has a bike"
-          c4 = true
+        if(entry['offshore-jigging'] == "on")
+          p ""
+          oj = true
         end
 
-        if(entry['subscribe_newsletter'] == "Yes")
-          p "entrant is sbuscribed to newsletter"
-          c5 = true
+        if(entry['shore-jigging'] == "on")
+          p ""
+          sj = true
         end
 
+        if(entry['inshore-lure'] == "on")
+          p ""
+          il = true
+        end
 
+        if(entry['offshore-jigging'] == "on")
+          p ""
+          oj = true
+        end
+
+        if(entry['trout'] == "on")
+          p ""
+          tr = true
+        end
+
+        if(entry['crappie'] == "on")
+          p ""
+          cr = true
+        end
+
+        if(entry['bass'] == "on")
+          p ""
+          bs = true
+        end
+
+        bod = entry['Dob-month']+'/'+entry['Dob-day']+'/'+entry['Dob-year']
+
+        t = DateTime
+        id = t.now.strftime("%Y%m%d%k%M%S%L")
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
-        dataextensionrow.Name = 'WOOBOX_API'
-        dataextensionrow.props = {"EmailAddress" => entry['email'],
-                                  "Signup_Time" => entry['createdate'],
-                                  "Age" => entry['age'],
-                                  "City" => entry['city'],
-                                  "Class" => entry['class'],
-                                  "Custom4" => c4,
-                                  "Custom5" => c5,
-                                  "FName" => entry['first_name'],
-                                  "LName" => entry['last_name'],
-                                  "Phone" => entry['phone'],
-                                  "Occupation" => entry['occupation'],
-                                  "OtherProfession" => entry['other_profession'],
+        dataextensionrow.Name = 'WooboxTest'
+        dataextensionrow.props = {"SubscriberKey" => id,
+                                  "EmailAddress" => entry['email'],
+                                  "SignUpTime" => entry['createdate'],
+                                  "DOB" => entry['age'],
+                                  "Country" => entry['city'],
+                                  "State" => entry['class'],
+                                  "Offshore-jigging" => oj,
+                                  "Offshore-popping" => op,
+                                  "Shore-jigging" => sj,
+                                  "Inshore-lure" => il,
+                                  "Trout" => tr,
+                                  "Crappie" => cr,
+                                  "Bass" => bs,
+                                  "Name" => entry['name'],
+                                  "Fishing-frequency" => entry['phone'],
                                   "IP_Address" => entry['ipaddress']}
         results = dataextensionrow.post
 
@@ -63,16 +99,14 @@ class MainController < ApplicationController
         email = entry['email']
 
     # Send an email with TriggeredSend
-        p '>>> Send an email with TriggeredSend'
-        sendTrig = FuelSDK::TriggeredSend.new
-        sendTrig.authStub = myclient
-        sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"SubscriberKey"=> email, "EmailAddress"=> email}}]
-        sendResponse = sendTrig.send
-        p 'Send Status: ' + sendResponse.status.to_s
-        p 'Code: ' + sendResponse.code.to_s
-        p 'Message: ' + sendResponse.message.to_s
-        p 'Result Count: ' + sendResponse.results.length.to_s
-        p 'Results: ' + sendResponse.results.inspect
+#        !p '>>> Send an email with TriggeredSend'
+#        sendTrig = FuelSDK::TriggeredSend.new
+#        sendTrig.authStub = myclient
+#        sendTrig.props = [{"CustomerKey" => "2156", "Subscribers" => {"SubscriberKey"=> email, "EmailAddress"=> email}}]
+#        p 'Send Status: ' + sendResponse.status.to_s
+#        p 'Code: ' + sendResponse.code.to_s
+#        p 'Result Count: ' + sendResponse.results.length.to_s
+#        p 'Results: ' + sendResponse.results.inspect
       end
     end
   end
