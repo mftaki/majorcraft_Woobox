@@ -78,8 +78,8 @@ class MainController < ApplicationController
                                   "EmailAddress" => entry['email'],
                                   "SignUpTime" => entry['createdate'],
                                   "DOB" => entry['age'],
-                                  "Country" => entry['city'],
-                                  "State" => entry['class'],
+                                  "Country" => entry['country'],
+                                  "State" => entry['state'],
                                   "Offshore-jigging" => oj,
                                   "Offshore-popping" => op,
                                   "Shore-jigging" => sj,
@@ -88,7 +88,7 @@ class MainController < ApplicationController
                                   "Crappie" => cr,
                                   "Bass" => bs,
                                   "Name" => entry['name'],
-                                  "Fishing-frequency" => entry['phone'],
+                                  "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
         results = dataextensionrow.post
 
