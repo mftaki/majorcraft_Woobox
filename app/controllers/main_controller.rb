@@ -16,10 +16,10 @@ class MainController < ApplicationController
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
       p entries
-      offshore-jigging = false
-      offshore-popping = false
-      shore-jigging = false
-      inshore-lure = false
+      offshorejigging = false
+      offshorepopping = false
+      shorejigging = false
+      inshorelure = false
       trout = false
       crappie = false
       bass = false
@@ -33,22 +33,22 @@ class MainController < ApplicationController
 
         if(entry['offshore-jigging'] == "on")
           p ""
-          offshore-jigging = true
+          offshorejigging = true
         end
 
         if(entry['shore-jigging'] == "on")
           p ""
-          shore-jigging = true
+          shorejigging = true
         end
 
         if(entry['inshore-lure'] == "on")
           p ""
-          inshore-lure = true
+          inshorelure = true
         end
 
         if(entry['offshore-popping'] == "on")
           p ""
-          offshore-popping = true
+          offshorepopping = true
         end
 
         if(entry['trout'] == "on")
@@ -73,10 +73,10 @@ class MainController < ApplicationController
                                   "SignUpTime" => entry['createdate'],
                                   "Country" => entry['country'],
                                   "State" => entry['state'],
-                                  "Offshore-jigging" => offshore-jigging,
-                                  "Offshore-popping" => offshore-popping,
-                                  "Shore-jigging" => shore-jigging,
-                                  "Inshore-lure" => inshore-lure,
+                                  "Offshore-jigging" => offshorejigging,
+                                  "Offshore-popping" => offshorepopping,
+                                  "Shore-jigging" => shorejigging,
+                                  "Inshore-lure" => inshorelure,
                                   "Trout" => trout,
                                   "Crappie" => crappie,
                                   "Bass" => bass,
