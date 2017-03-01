@@ -16,13 +16,13 @@ class MainController < ApplicationController
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
       p entries
-      oj = false
-      op = false
-      sj = false
-      il = false
-      tr = false
-      cr = false
-      bs = false
+        oj = false
+        op = false
+        sj = false
+        il = false
+        tr = false
+        cr = false
+        bs = false
 
       myclient = ET_Client.new auth
       p myclient
@@ -31,40 +31,40 @@ class MainController < ApplicationController
         p entry['email']
 
 
-        if(entry['offshore-jigging'] == "on")
-          p ""
-          oj = true
-        end
+          if(entry['offshore-jigging'] == "on")
+            p ""
+            oj = true
+          end
 
-        if(entry['shore-jigging'] == "on")
-          p ""
-          sj = true
-        end
+          if(entry['shore-jigging'] == "on")
+            p ""
+            sj = true
+          end
 
-        if(entry['inshore-lure'] == "on")
-          p ""
-          il = true
-        end
+          if(entry['inshore-lure'] == "on")
+            p ""
+            il = true
+          end
 
-        if(entry['offshore-jigging'] == "on")
-          p ""
-          oj = true
-        end
+          if(entry['offshore-jigging'] == "on")
+            p ""
+            oj = true
+          end
 
-        if(entry['trout'] == "on")
-          p ""
-          tr = true
-        end
+          if(entry['trout'] == "on")
+            p ""
+            tr = true
+          end
 
-        if(entry['crappie'] == "on")
-          p ""
-          cr = true
-        end
+          if(entry['crappie'] == "on")
+            p ""
+            cr = true
+          end
 
-        if(entry['bass'] == "on")
-          p ""
-          bs = true
-        end
+          if(entry['bass'] == "on")
+            p ""
+            bs = true
+          end
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
