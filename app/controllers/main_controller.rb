@@ -66,7 +66,7 @@ class MainController < ApplicationController
           bs = true
         end
 
-        bod = entry['Dob-month']+'/'+entry['Dob-day']+'/'+entry['Dob-year']
+        bod = entry['Dob-month'] + '/' + entry['Dob-day'] + '/' +entry['Dob-year']
 
         t = DateTime
         id = t.now.strftime("%Y%m%d%k%M%S%L")
