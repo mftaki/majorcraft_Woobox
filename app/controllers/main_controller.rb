@@ -28,7 +28,9 @@ class MainController < ApplicationController
       p myclient
 
       entries.each do |entry|
-        p entry['email']
+        p "*" * 50
+        p "entry object: " + entry.to_s
+        p "*" * 50
 
 
         if(entry['offshore-jigging'] == "on")
