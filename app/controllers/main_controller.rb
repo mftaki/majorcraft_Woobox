@@ -84,7 +84,7 @@ class MainController < ApplicationController
                                   "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
 
-        p "New Row: " + dataextensionrow.props
+        p "New Row: " + dataextensionrow.props.to_s
         results = dataextensionrow.post
 
         p results.results
