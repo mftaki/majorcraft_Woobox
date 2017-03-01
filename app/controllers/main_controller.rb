@@ -66,18 +66,11 @@ class MainController < ApplicationController
           bs = true
         end
 
-        bod = entry['Dob-month'] + '/' + entry['Dob-day'] + '/' +entry['Dob-year']
-
-        t = DateTime
-        id = t.now.strftime("%Y%m%d%k%M%S%L")
-
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
         dataextensionrow.Name = 'WooboxTest'
-        dataextensionrow.props = {"SubscriberKey" => id,
-                                  "EmailAddress" => entry['email'],
+        dataextensionrow.props = {"EmailAddress" => entry['email'],
                                   "SignUpTime" => entry['createdate'],
-                                  "DOB" => bod,
                                   "Country" => entry['country'],
                                   "State" => entry['state'],
                                   "Offshore-jigging" => oj,
