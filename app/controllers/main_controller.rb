@@ -31,40 +31,40 @@ class MainController < ApplicationController
         p entry['email']
 
 
-          if(entry['offshore-jigging'] == "on")
-            p ""
-            offshore-jigging = true
-          end
+        if(entry['offshore-jigging'] == "on")
+          p ""
+          offshore-jigging = true
+        end
 
-          if(entry['shore-jigging'] == "on")
-            p ""
-            shore-jigging = true
-          end
+        if(entry['shore-jigging'] == "on")
+          p ""
+          shore-jigging = true
+        end
 
-          if(entry['inshore-lure'] == "on")
-            p ""
-            inshore-lure = true
-          end
+        if(entry['inshore-lure'] == "on")
+          p ""
+          inshore-lure = true
+        end
 
-          if(entry['offshore-popping'] == "on")
-            p ""
-            offshore-popping = true
-          end
+        if(entry['offshore-popping'] == "on")
+          p ""
+          offshore-popping = true
+        end
 
-          if(entry['trout'] == "on")
-            p ""
-            trout = true
-          end
+        if(entry['trout'] == "on")
+          p ""
+          trout = true
+        end
 
-          if(entry['crappie'] == "on")
-            p ""
-            crappie = true
-          end
+        if(entry['crappie'] == "on")
+          p ""
+          crappie = true
+        end
 
-          if(entry['bass'] == "on")
-            p ""
-            bass = true
-          end
+        if(entry['bass'] == "on")
+          p ""
+          bass = true
+        end
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
@@ -74,7 +74,7 @@ class MainController < ApplicationController
                                   "Country" => entry['country'],
                                   "State" => entry['state'],
                                   "Offshore-jigging" => offshore-jigging,
-                                  "Offshore-popping" => offshore-popping,
+                                  "Offshore-popping" => op,
                                   "Shore-jigging" => shore-jigging,
                                   "Inshore-lure" => inshore-lure,
                                   "Trout" => trout,
