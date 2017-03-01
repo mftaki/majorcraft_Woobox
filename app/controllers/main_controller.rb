@@ -29,7 +29,7 @@ class MainController < ApplicationController
 
       entries.each do |entry|
         p "*" * 50
-        p "entry object: " + entry.to_s
+        p entry['bass'] == "on"
         p "*" * 50
 
 
