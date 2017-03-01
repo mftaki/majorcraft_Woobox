@@ -32,37 +32,37 @@ class MainController < ApplicationController
 
 
         if(entry['offshore-jigging'] == "on")
-          p ""
+          p "offshore-jigging true"
           offshorejigging = true
         end
 
         if(entry['shore-jigging'] == "on")
-          p ""
+          p "shore-jigging true"
           shorejigging = true
         end
 
         if(entry['inshore-lure'] == "on")
-          p ""
+          p "inshore-lure true"
           inshorelure = true
         end
 
         if(entry['offshore-popping'] == "on")
-          p ""
+          p "offshore-popping true"
           offshorepopping = true
         end
 
         if(entry['trout'] == "on")
-          p ""
+          p "trout true"
           trout = true
         end
 
         if(entry['crappie'] == "on")
-          p ""
+          p "crappie true"
           crappie = true
         end
 
         if(entry['bass'] == "on")
-          p ""
+          p "bass true"
           bass = true
         end
 
@@ -83,6 +83,8 @@ class MainController < ApplicationController
                                   "Name" => entry['name'],
                                   "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
+
+        p "New Row: " + dataextensionrow.props
         results = dataextensionrow.post
 
         p results.results
