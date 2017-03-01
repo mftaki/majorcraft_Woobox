@@ -16,13 +16,13 @@ class MainController < ApplicationController
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
       p entries
-        oj = false
-        op = false
-        sj = false
-        il = false
-        tr = false
-        cr = false
-        bs = false
+      offshore-jigging = false
+      offshore-popping = false
+      shore-jigging = false
+      inshore-lure = false
+      trout = false
+      crappie = false
+      bass = false
 
       myclient = ET_Client.new auth
       p myclient
@@ -33,37 +33,37 @@ class MainController < ApplicationController
 
           if(entry['offshore-jigging'] == "on")
             p ""
-            oj = true
+            offshore-jigging = true
           end
 
           if(entry['shore-jigging'] == "on")
             p ""
-            sj = true
+            shore-jigging = true
           end
 
           if(entry['inshore-lure'] == "on")
             p ""
-            il = true
+            inshore-lure = true
           end
 
-          if(entry['offshore-jigging'] == "on")
+          if(entry['offshore-popping'] == "on")
             p ""
-            oj = true
+            offshore-popping = true
           end
 
           if(entry['trout'] == "on")
             p ""
-            tr = true
+            trout = true
           end
 
           if(entry['crappie'] == "on")
             p ""
-            cr = true
+            crappie = true
           end
 
           if(entry['bass'] == "on")
             p ""
-            bs = true
+            bass = true
           end
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
@@ -73,13 +73,13 @@ class MainController < ApplicationController
                                   "SignUpTime" => entry['createdate'],
                                   "Country" => entry['country'],
                                   "State" => entry['state'],
-                                  "Offshore-jigging" => oj,
-                                  "Offshore-popping" => op,
-                                  "Shore-jigging" => sj,
-                                  "Inshore-lure" => il,
-                                  "Trout" => tr,
-                                  "Crappie" => cr,
-                                  "Bass" => bs,
+                                  "Offshore-jigging" => offshore-jigging,
+                                  "Offshore-popping" => offshore-popping,
+                                  "Shore-jigging" => shore-jigging,
+                                  "Inshore-lure" => inshore-lure,
+                                  "Trout" => trout,
+                                  "Crappie" => crappie,
+                                  "Bass" => bass,
                                   "Name" => entry['name'],
                                   "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
