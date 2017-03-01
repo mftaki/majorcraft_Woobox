@@ -74,7 +74,7 @@ class MainController < ApplicationController
                                   "Country" => entry['country'],
                                   "State" => entry['state'],
                                   "Offshore-jigging" => offshore-jigging,
-                                  "Offshore-popping" => op,
+                                  "Offshore-popping" => offshore-popping,
                                   "Shore-jigging" => shore-jigging,
                                   "Inshore-lure" => inshore-lure,
                                   "Trout" => trout,
