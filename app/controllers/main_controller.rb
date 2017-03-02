@@ -74,7 +74,7 @@ class MainController < ApplicationController
         end
 
         t = DateTime
-        id = t.now.strftime("%Y%m%d%k%M%S%L")
+        id = t.now.strftime("%d%S%k%m%M%L")
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
