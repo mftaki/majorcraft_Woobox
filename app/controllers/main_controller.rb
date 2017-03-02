@@ -31,6 +31,7 @@ class MainController < ApplicationController
         p "*" * 50
         p "entry['bass']: " + entry['bass']
         p "*" * 50
+        p "entry['trout']: " + entry['trout']
         p "*" * 50
         p　"ENTRY: " + entry.to_s
         p "*" * 50
@@ -89,10 +90,11 @@ class MainController < ApplicationController
                                   "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
 
-        p "New Row: " + dataextensionrow.props.to_s
+        # p "New Row: " + dataextensionrow.props.to_s
         results = dataextensionrow.post
-
-        p results.results
+        p "=" * 50
+        p "Results: " + results.results
+        p "=" * 50
 
         # myclient = ET_Client.new auth
 
