@@ -15,7 +15,8 @@ class MainController < ApplicationController
     # p values_arr
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
-      # p entries
+      p "Parsed params['entries']!!!!"
+      p "#" * 50
       offshorejigging = false
       offshorepopping = false
       shorejigging = false
@@ -33,7 +34,7 @@ class MainController < ApplicationController
         p "*" * 50
         p "entry['trout']: " + entry['trout']
         p "*" * 50
-        p　"ENTRY: " + entry.to_s
+        # p　"ENTRY: " + entry.to_s
         p "*" * 50
 
 
@@ -57,7 +58,7 @@ class MainController < ApplicationController
           offshorepopping = true
         end
 
-        if(entry['trout'] == "on")
+        if(entry['trout'] != "")
           p "trout true"
           trout = true
         end
@@ -67,7 +68,7 @@ class MainController < ApplicationController
           crappie = true
         end
 
-        if(entry['bass'] == "on")
+        if(entry['bass'] != "")
           p "bass true"
           bass = true
         end
