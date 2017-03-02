@@ -34,7 +34,7 @@ class MainController < ApplicationController
         p "*" * 50
         p "entry['trout']: " + entry['trout']
         p "*" * 50
-        # p　"ENTRY: " + entry.to_s
+        p entry
         p "*" * 50
 
 
@@ -58,7 +58,7 @@ class MainController < ApplicationController
           offshorepopping = true
         end
 
-        if(entry['trout'] != "")
+        if(entry['trout'] == "on")
           p "trout true"
           trout = true
         end
@@ -68,7 +68,7 @@ class MainController < ApplicationController
           crappie = true
         end
 
-        if(entry['bass'] != "")
+        if(entry['bass'] == "on")
           p "bass true"
           bass = true
         end
