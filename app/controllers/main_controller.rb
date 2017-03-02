@@ -73,6 +73,8 @@ class MainController < ApplicationController
           bass = true
         end
 
+        dob = entry['Dob-month'] + '/' + entry['Dob-day'] + '/' +entry['Dob-year']
+
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
         dataextensionrow.Name = 'WooboxTest2'
@@ -88,6 +90,7 @@ class MainController < ApplicationController
                                   "Crappie" => crappie,
                                   "Bass" => bass,
                                   "Name" => entry['name'],
+                                  "DOB" => dob,
                                   "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
 
