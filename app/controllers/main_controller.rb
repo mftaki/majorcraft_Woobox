@@ -78,7 +78,7 @@ class MainController < ApplicationController
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
-        dataextensionrow.Name = 'WooboxTest2'
+        dataextensionrow.Name = 'Woobox_Subscribers'
         dataextensionrow.props = {"EmailAddress" => entry['email'],
                                   "SubscriberKey" => id,
                                   "SignUpTime" => entry['createdate'],
