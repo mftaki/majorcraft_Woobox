@@ -94,7 +94,7 @@ class MainController < ApplicationController
         # p "New Row: " + dataextensionrow.props.to_s
         results = dataextensionrow.post
         p "=" * 50
-        p "Results: " + results.results
+        p "Results: " + results.results.to_s
         p "=" * 50
 
         # myclient = ET_Client.new auth
