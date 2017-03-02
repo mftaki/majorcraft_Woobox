@@ -73,7 +73,7 @@ class MainController < ApplicationController
           bass = true
         end
 
-        dob = entry['Dob-month'] + '/' + entry['Dob-day'] + '/' + entry['Dob-year']
+        dob = entry['Dob-month'].to_s + '/' + entry['Dob-day'].to_s + '/' + entry['Dob-year'].to_s
 
         dataextensionrow = FuelSDK::DataExtension::Row.new
         dataextensionrow.authStub = myclient
