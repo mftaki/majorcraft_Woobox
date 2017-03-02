@@ -89,7 +89,7 @@ class MainController < ApplicationController
                                   "Crappie" => crappie,
                                   "Bass" => bass,
                                   "Name" => entry['name'],
-                                  "DOB" => entry['Dob-month'].to_s + '/' + entry['Dob-day'].to_s + '/' + entry['Dob-year'].to_s + ' 00:00:00',
+                                  "DOB" => entry['dob-month'].to_s + '/' + entry['dob-day'].to_s + '/' + entry['dob-year'].to_s + ' 00:00:00',
                                   "Fishing-frequency" => entry['fishing-frequency'],
                                   "IP_Address" => entry['ipaddress']}
 
