@@ -15,7 +15,7 @@ class MainController < ApplicationController
     # p values_arr
     if(params['entries'] != nil)
       entries = JSON.parse(params['entries'])
-      p entries
+      # p entries
       offshorejigging = false
       offshorepopping = false
       shorejigging = false
@@ -25,11 +25,14 @@ class MainController < ApplicationController
       bass = false
 
       myclient = ET_Client.new auth
-      p myclient
+      # p myclient
 
       entries.each do |entry|
         p "*" * 50
-        p entry['bass'] == "on"
+        p "entry['bass']: " + entry['bass']
+        p "*" * 50
+        p "*" * 50
+        p　"ENTRY: " + entry.to_s
         p "*" * 50
 
 
